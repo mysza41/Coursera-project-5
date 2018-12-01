@@ -1,0 +1,21 @@
+<div class="container">
+  <h2 class="text-center">Profile info</h2>
+  <div class="form-row" ng-if="profileInfo.profileData">
+    <div class="form-group col-md-6 profile-info">
+      <label for="firstName">First name</label>
+      <input id ="firstName" class="form-control" type="text" placeholder="{{profileInfo.profileData.personData.firstName}}" readonly>
+      <label for="lastName">Last name</label>
+      <input id ="lastName" class="form-control" type="text" placeholder="{{profileInfo.profileData.personData.lastName}}" readonly>
+      <label for="email">Email</label>
+      <input id ="email" class="form-control" type="text" placeholder="{{profileInfo.profileData.personData.email}}" readonly>
+      <label for="phone">Phone number</label>
+      <input id ="phone" class="form-control" type="text" placeholder="{{profileInfo.profileData.personData.phone}}" readonly>
+    </div>
+    <h3 class="text-center">Your Favourite dish</h3>
+    <menu-item menu-item="profileInfo.profileData.favouriteDishData">
+    </menu-item>
+  </div>
+  <div class="text-center">
+    <span ng-if="!profileInfo.profileData">Not Signed Up Yet. <a ui-sref="public.signup" class= "sign-up-link"> Sign up Now!</a></span>
+  </div>
+</div>
